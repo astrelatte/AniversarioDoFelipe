@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+
+body {
+   display: flex; 
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin: 100px auto;
+   /* height: 150vh; */
+   background-color: #cfbaf0 ;
+}
+
+/* inicio do container do card */
+
+.niverCard {
+    /* border: 1px solid red; */
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 4s;
+}
+
+/* Ver se eu mudo isso pro outro lado */
+.niverCard:hover {
+    transform: perspective(2500px) rotate(-4deg);
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.15), 0 10px 100px rgba(0,0,0,0.3);
+}
+
+.niverCard:hover .cardFront {
+    transform: rotateY(-160deg);
+}
+
+.niverCard:hover .front-text {
+    display: none;
+}
+
+
+
+
+/*pode remover se quiser deixar o desenho*/
+.niverCard:hover .wrap-deco {
+    display: none;
+}
+ 
+
+.niverCard:hover .wrap-deco-dois {
+    display: none;
+}
+
+/*pode remover se quiser deixar o bolo*/
+.niverCard:hover .plate {
+    display: none;
+}
+
+
+/* Estilização da parte da frente */
+
+.cardFront {
+    position: relative;
+    background-color: rgb(255, 246, 246);
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,.13), 30px 0 50px rgba(0,0,0,0.1);
+    transition: .4s;
+}
+
+.feliz, .amigoxu {
+    position: relative;
+    text-align: center;
+    backface-visibility: hidden;
+    font-size: 30px;
+}
+
+.feliz {
+    top: 210px;
+}
+
+.amigoxu {
+    top: 150px;
+}
+
+.bday {
+    position: relative;
+    text-align: center;
+    top: 180px;
+    font-size: 30px;
+}
+
+.wrap-deco {
+    position: absolute;
+    top: -230px;
+    left: -200px;    
+}
+
+
+/* Parte da decoração */
+.decoracao {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    border: 3px solid #333;
+    border-radius: 50%;
+}
+
+.decoracao:before, .decoracao:after, .decoracaodois:before, .decoracaodois:after, .decoracaotres:before, .decoracaotres:after {
+    content:"";
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    width:0;
+    height:0;
+}
+
+
+.decoracao:before {
+    border-top: 40px solid #4b4581;
+    top: 297px;
+    left: 210px;
+    transform: rotate(-5deg);
+}
+
+.decoracao:after {
+    border-top: 40px solid #5ecaf4;
+    top: 288px;
+    left: 260px;
+    transform: rotate(-17deg);
+}
+
+.decoracaodois:before {
+    border-top: 40px solid #8c60dd;
+    top:268px;
+    left:315px;
+    transform: rotate(-30deg);
+}
+
+.decoracaodois:after, .decoracaotres:after {
+    border-top: 40px solid #b986f8;
+    top:238px;
+    left:355px;
+    transform: rotate(-40deg);
+}
+
+.wrap-deco-dois {
+    transform: scaleX(-1);
+    position: absolute;
+    top:-230px;
+    left:445px; 
+}
+
+.decoracaotres:before {
+    border-top: 40px solid #6271c7;
+    top:268px;
+    left:315px;
+    transform: rotate(-30deg);
+}
+
+.plate {
+    position: absolute;
+    width: 130px;
+    height: 5px;
+    background-color: #34264b;
+    left:60px;
+    top:213px;
+}
+
+.bolo {
+    position: absolute;
+    overflow: hidden;
+    width:100px;
+    height: 50px;
+    background-color: #885bf1;
+    border-radius: 10px 10px 0 0;
+    top:-50px;
+    left:15px;
+    box-shadow: inset 0 -15px #85b6ee, inset 0 15px #9aa8e7;
+}
+
+.bolo:before {
+    content:"";
+    position: absolute;
+    background-color: #9aa8e7;
+    width:10px;
+    height:20px;
+    top:5px;
+    border-radius:20px;
+    box-shadow: 10px 5px #885bf1, 20px 0px #9aa8e7, 30px 2px #885bf1, 40px 5px #9aa8e7, 50px 5px #885bf1, 60px 0px #9aa8e7, 70px 5px #885bf1, 80px 5px #9aa8e7, 90px 5px #885bf1;
+}
+
+.plate:before {
+    content:"";
+    position: absolute;
+    background: repeating-linear-gradient(-45deg, #9b5de5, #9b5de5 3px, #292386 3px, #00f5d4 6px);
+    width:7px;
+    height: 25px;
+    top:-75px;
+    left:61px;
+}
+
+.plate:after {
+    content:"";
+    position: absolute;
+    width:1px;
+    height: 5px;
+    background-color: #333;
+    top:-80px;
+    left:64px;
+}
+
+.vela {
+    position: absolute;
+    background-color: #df4c08;
+    border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+    transform: rotate(-45deg);
+    width:15px;
+    height:15px;
+    opacity:0.7;
+    top:-93px;
+    left:57px;
+}
+
+
+/* Estilo para a parte de dentro */
+.cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height:350px;
+    z-index:-1;
+    left:0;
+    top:0;
+    box-shadow: inset 100px 20px 100px rgba(0,0,0,0.2);
+}
+
+.insideText {
+    position: relative;
+    top:-160px;
+    transform: scale(0.7);
+}
+
+.wishes {
+    position: relative;
+    top:-100px;
+    margin: 25px ;
+    font-family: 'Indie Flower', sans-serif;
+    font-weight: 600;
+
+}
+
+.whisper {
+    font-size: 14px;
+    font-weight: 500;
+}
+  
+video {
+    margin-top: 50px ;   
+}
+
+.caixa {
+    width: 400px;
+    height: 300px;   
+    background-color: transparent;
+    display: none;
+    margin: 10px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn {
+    width: 200px;
+    height: 40px;
+    outline: none;
+    margin: 70px auto 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #b0ace0;
+    border-radius: 20px;
+}
+
+.btn:hover {
+   background-color: #948be9;
+}
+
+
+/* os nome que eu boto vsf */
+.tentando {
+    display: flex;
+}
+
+.mano  {
+    font-family: monospace;
+    border-right: 3px solid;
+    width: 29ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(29), blinking 0.5s infinite step-end alternate;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+
+    }
+}
+
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
